@@ -16,35 +16,51 @@
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
       line-height: 1.6;
       color: #333;
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      background: #f5f7fa;
       min-height: 100vh;
-      padding: 20px;
+      padding: 0;
+      position: relative;
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 300px;
+      background: linear-gradient(90deg, rgba(102, 126, 234, 0.08) 0%, transparent 100%);
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    body::after {
+      content: '';
+      position: fixed;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      width: 300px;
+      background: linear-gradient(-90deg, rgba(118, 75, 162, 0.08) 0%, transparent 100%);
+      z-index: 0;
+      pointer-events: none;
     }
 
     .container {
-      max-width: 800px;
-      margin: 50px auto;
+      max-width: 1400px;
+      margin: 0 auto;
       background: white;
-      border-radius: 20px;
-      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+      min-height: 100vh;
       overflow: hidden;
+      position: relative;
+      z-index: 1;
     }
 
     .header {
       background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
       color: white;
-      padding: 60px 40px;
-      text-align: center;
-    }
-
-    .avatar {
-      width: 150px;
-      height: 150px;
-      border-radius: 50%;
-      border: 5px solid white;
-      object-fit: cover;
-      margin-bottom: 20px;
-      background: #fff;
+      padding: 40px 80px;
+      position: relative;
     }
 
     .header h1 {
@@ -59,20 +75,22 @@
     }
 
     .content {
-      padding: 40px;
+      padding: 60px 80px;
+      max-width: 1200px;
+      margin: 0 auto;
     }
 
     .section {
-      margin-bottom: 40px;
+      margin-bottom: 50px;
     }
 
     .section h2 {
       color: #667eea;
       margin-bottom: 20px;
-      font-size: 1.5em;
-      border-bottom: 3px solid #667eea;
+      font-size: 1.8em;
+      border-bottom: 4px solid #667eea;
       display: inline-block;
-      padding-bottom: 5px;
+      padding-bottom: 8px;
     }
 
     .social-links {
@@ -108,21 +126,23 @@
 
     .skill-tag {
       padding: 8px 20px;
-      background: #f0f0f0;
+      background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
       border-radius: 20px;
       font-size: 0.9em;
       color: #555;
       transition: all 0.3s;
+      border: 1px solid rgba(102, 126, 234, 0.2);
     }
 
     .skill-tag:hover {
-      background: #667eea;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
       color: white;
       transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
     }
 
     .contact-info {
-      text-align: center;
+      text-align: left;
       color: #666;
     }
 
@@ -132,46 +152,51 @@
 
     .projects {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 20px;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 30px;
     }
 
     .project-card {
       background: #f8f9fa;
-      border-radius: 10px;
-      padding: 20px;
+      border-radius: 15px;
+      padding: 30px;
       transition: transform 0.3s, box-shadow 0.3s;
+      border: 2px solid transparent;
     }
 
     .project-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 10px 25px rgba(102, 126, 234, 0.2);
+      transform: translateY(-8px);
+      box-shadow: 0 15px 35px rgba(102, 126, 234, 0.3);
+      border-color: #667eea;
+      background: white;
     }
 
     .project-card h3 {
       color: #667eea;
-      margin-bottom: 10px;
-      font-size: 1.2em;
+      margin-bottom: 15px;
+      font-size: 1.3em;
     }
 
     .project-card p {
       color: #666;
-      font-size: 0.9em;
-      margin-bottom: 15px;
+      font-size: 1em;
+      margin-bottom: 20px;
+      line-height: 1.8;
     }
 
     .project-card .tags {
       display: flex;
-      gap: 8px;
+      gap: 10px;
       flex-wrap: wrap;
     }
 
     .project-card .tag {
-      font-size: 0.8em;
-      padding: 4px 12px;
+      font-size: 0.85em;
+      padding: 6px 16px;
       background: #e9ecef;
-      border-radius: 12px;
+      border-radius: 15px;
       color: #555;
+      font-weight: 500;
     }
 
     .footer {
@@ -182,13 +207,34 @@
       font-size: 0.9em;
     }
 
-    @media (max-width: 600px) {
+    @media (max-width: 768px) {
+      body::before,
+      body::after {
+        display: none;
+      }
+
+      .header {
+        padding: 20px;
+      }
+
       .header h1 {
         font-size: 2em;
       }
 
+      .header p {
+        font-size: 1.1em;
+      }
+
       .content {
-        padding: 30px 20px;
+        padding: 40px 20px;
+      }
+
+      .section h2 {
+        font-size: 1.4em;
+      }
+
+      .projects {
+        grid-template-columns: 1fr;
       }
 
       .social-links a {
@@ -200,21 +246,15 @@
 </head>
 <body>
   <div class="container">
-    <!-- 头部区域 -->
     <div class="header">
-      <!-- 请替换为您的头像链接 -->
-      <img src="https://via.placeholder.com/150" alt="头像" class="avatar" />
       <h1>机器人算法工程师</h1>
       <p>专注于 ROS、SLAM 与自主导航算法研究</p>
     </div>
-
-    <!-- 主要内容 -->
     <div class="content">
-      <!-- 关于我 -->
       <div class="section">
         <h2><i class="fas fa-user"></i> 关于我</h2>
         <p>
-          您好！我是一名专注于机器人算法研发的工程师，拥有丰富的 ROS 开发经验和深厚的 SLAM 技术积累。
+          您好！我是一名专注于机器人建图和定位导航的工程师，拥有丰富的 ROS 开发经验和深厚的 SLAM 技术积累。
           擅长激光 SLAM、视觉 SLAM 以及多传感器融合算法，在自主导航、路径规划和运动控制方面有深入实践。
           致力于将先进的算法应用于实际机器人系统，推动机器人技术的落地应用。
         </p>
@@ -235,7 +275,6 @@
           <span class="skill-tag">C++</span>
           <span class="skill-tag">Python</span>
           <span class="skill-tag">Linux</span>
-          <span class="skill-tag">Docker</span>
         </div>
       </div>
 
@@ -248,16 +287,20 @@
             <p>基于ROS和激光雷达的室内SLAM建图与导航系统，实现自主定位、建图和路径规划功能。</p>
             <div class="tags">
               <span class="tag">ROS</span>
-              <span class="tag">GMapping</span>
-              <span class="tag">AMCL</span>
+              <span class="tag">NDT Mapping</span>
+              <span class="tag">NDT Localizer</span>
               <span class="tag">Move Base</span>
+            </div>            <div style="margin-top: 20px; text-align: center;">
+              <a href="slam-project.html" class="project-link" style="display: inline-flex; align-items: center; gap: 8px; padding: 10px 20px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; text-decoration: none; border-radius: 25px; transition: all 0.3s; font-weight: 500;">
+                <i class="fas fa-arrow-right"></i> 查看详情
+              </a>
             </div>
           </div>
           <div class="project-card">
             <h3><i class="fas fa-camera"></i> 视觉SLAM算法研究</h3>
             <p>基于ORB-SLAM和VINS-Mono的视觉SLAM算法优化，提升在动态环境下的定位精度和鲁棒性。</p>
             <div class="tags">
-              <span class="tag">ORB-SLAM</span>
+              <span class="tag">ORB-SLAM3</span>
               <span class="tag">VINS-Mono</span>
               <span class="tag">OpenCV</span>
               <span class="tag">Python</span>
@@ -270,7 +313,7 @@
               <span class="tag">传感器融合</span>
               <span class="tag">EKF</span>
               <span class="tag">LIO-SAM</span>
-              <span class="tag">ROS2</span>
+              <span class="tag">ROS</span>
             </div>
           </div>
           <div class="project-card">
@@ -288,19 +331,13 @@
 
       <!-- 社交链接 -->
       <div class="section">
-        <h2><i class="fas fa-share-alt"></i> 联系我</h2>
+        <h2><i class="fas fa-share-alt"></i> 联系方式</h2>
         <div class="social-links">
-          <a href="https://github.com/你的用户名" target="_blank">
+          <a href="https://github.com/Youngmh1" target="_blank">
             <i class="fab fa-github"></i> GitHub
           </a>
-          <a href="mailto:your.email@example.com">
-            <i class="fas fa-envelope"></i> 邮箱
-          </a>
-          <a href="https://linkedin.com/in/你的用户名" target="_blank">
-            <i class="fab fa-linkedin"></i> LinkedIn
-          </a>
-          <a href="https://twitter.com/你的用户名" target="_blank">
-            <i class="fab fa-twitter"></i> Twitter
+          <a href="mailto:youngmh@foxmail.com">
+            <i class="fas fa-envelope"></i> youngmh@foxmail.com
           </a>
         </div>
       </div>
@@ -309,16 +346,10 @@
       <div class="section">
         <h2><i class="fas fa-map-marker-alt"></i> 其他信息</h2>
         <div class="contact-info">
-          <p><i class="fas fa-map-marker-alt"></i> 所在城市，国家</p>
-          <p><i class="fas fa-briefcase"></i> 目前职位 / 可工作状态</p>
+          <p><i class="fas fa-map-marker-alt"></i> 所在城市：宁波</p>
+          <p><i class="fas fa-briefcase"></i> 目前职位：机器人导航工程师</p>
         </div>
       </div>
-    </div>
-
-    <!-- 页脚 -->
-    <div class="footer">
-      <p>© 2024 机器人算法工程师。All rights reserved。</p>
-      <p>Powered by GitHub Pages</p>
     </div>
   </div>
 </body>
