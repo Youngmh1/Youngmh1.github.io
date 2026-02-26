@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>个人主页</title>
+  <title>机器人算法工程师 - 个人主页</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <style>
     * {
@@ -130,6 +130,50 @@
       margin: 10px 0;
     }
 
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+
+    .project-card {
+      background: #f8f9fa;
+      border-radius: 10px;
+      padding: 20px;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .project-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(102, 126, 234, 0.2);
+    }
+
+    .project-card h3 {
+      color: #667eea;
+      margin-bottom: 10px;
+      font-size: 1.2em;
+    }
+
+    .project-card p {
+      color: #666;
+      font-size: 0.9em;
+      margin-bottom: 15px;
+    }
+
+    .project-card .tags {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .project-card .tag {
+      font-size: 0.8em;
+      padding: 4px 12px;
+      background: #e9ecef;
+      border-radius: 12px;
+      color: #555;
+    }
+
     .footer {
       text-align: center;
       padding: 30px;
@@ -160,8 +204,8 @@
     <div class="header">
       <!-- 请替换为您的头像链接 -->
       <img src="https://via.placeholder.com/150" alt="头像" class="avatar" />
-      <h1>您的姓名</h1>
-      <p>职业 / 身份简介</p>
+      <h1>机器人算法工程师</h1>
+      <p>专注于 ROS、SLAM 与自主导航算法研究</p>
     </div>
 
     <!-- 主要内容 -->
@@ -170,8 +214,9 @@
       <div class="section">
         <h2><i class="fas fa-user"></i> 关于我</h2>
         <p>
-          您好！我是一名热爱技术的开发者，专注于 Web 开发和用户体验设计。
-          喜欢探索新技术，乐于分享知识。欢迎与我交流！
+          您好！我是一名专注于机器人算法研发的工程师，拥有丰富的 ROS 开发经验和深厚的 SLAM 技术积累。
+          擅长激光 SLAM、视觉 SLAM 以及多传感器融合算法，在自主导航、路径规划和运动控制方面有深入实践。
+          致力于将先进的算法应用于实际机器人系统，推动机器人技术的落地应用。
         </p>
       </div>
 
@@ -179,12 +224,65 @@
       <div class="section">
         <h2><i class="fas fa-code"></i> 技能</h2>
         <div class="skills">
-          <span class="skill-tag">HTML/CSS</span>
-          <span class="skill-tag">JavaScript</span>
+          <span class="skill-tag">ROS/ROS2</span>
+          <span class="skill-tag">SLAM</span>
+          <span class="skill-tag">激光SLAM</span>
+          <span class="skill-tag">视觉SLAM</span>
+          <span class="skill-tag">自主导航</span>
+          <span class="skill-tag">路径规划</span>
+          <span class="skill-tag">运动控制</span>
+          <span class="skill-tag">多传感器融合</span>
+          <span class="skill-tag">C++</span>
           <span class="skill-tag">Python</span>
-          <span class="skill-tag">Git</span>
-          <span class="skill-tag">React</span>
-          <span class="skill-tag">Node.js</span>
+          <span class="skill-tag">Linux</span>
+          <span class="skill-tag">Docker</span>
+        </div>
+      </div>
+
+      <!-- 项目展示 -->
+      <div class="section">
+        <h2><i class="fas fa-project-diagram"></i> 项目展示</h2>
+        <div class="projects">
+          <div class="project-card">
+            <h3><i class="fas fa-robot"></i> 室内移动机器人SLAM系统</h3>
+            <p>基于ROS和激光雷达的室内SLAM建图与导航系统，实现自主定位、建图和路径规划功能。</p>
+            <div class="tags">
+              <span class="tag">ROS</span>
+              <span class="tag">GMapping</span>
+              <span class="tag">AMCL</span>
+              <span class="tag">Move Base</span>
+            </div>
+          </div>
+          <div class="project-card">
+            <h3><i class="fas fa-camera"></i> 视觉SLAM算法研究</h3>
+            <p>基于ORB-SLAM和VINS-Mono的视觉SLAM算法优化，提升在动态环境下的定位精度和鲁棒性。</p>
+            <div class="tags">
+              <span class="tag">ORB-SLAM</span>
+              <span class="tag">VINS-Mono</span>
+              <span class="tag">OpenCV</span>
+              <span class="tag">Python</span>
+            </div>
+          </div>
+          <div class="project-card">
+            <h3><i class="fas fa-map-marked-alt"></i> 多传感器融合导航</h3>
+            <p>融合激光雷达、IMU和视觉里程计的多传感器SLAM系统，提升复杂环境下的导航性能。</p>
+            <div class="tags">
+              <span class="tag">传感器融合</span>
+              <span class="tag">EKF</span>
+              <span class="tag">LIO-SAM</span>
+              <span class="tag">ROS2</span>
+            </div>
+          </div>
+          <div class="project-card">
+            <h3><i class="fas fa-route"></i> 自主路径规划算法</h3>
+            <p>改进的A*和DWA算法，实现动态环境下的实时路径规划和避障功能。</p>
+            <div class="tags">
+              <span class="tag">A*</span>
+              <span class="tag">DWA</span>
+              <span class="tag">RRT</span>
+              <span class="tag">C++</span>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -219,7 +317,7 @@
 
     <!-- 页脚 -->
     <div class="footer">
-      <p>© 2024 您的姓名。All rights reserved.</p>
+      <p>© 2024 机器人算法工程师。All rights reserved。</p>
       <p>Powered by GitHub Pages</p>
     </div>
   </div>
