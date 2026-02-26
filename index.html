@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>我的个人主页</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      min-height: 100vh;
+      padding: 20px;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 50px auto;
+      background: white;
+      border-radius: 20px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+      overflow: hidden;
+    }
+
+    .header {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      padding: 60px 40px;
+      text-align: center;
+    }
+
+    .avatar {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      border: 5px solid white;
+      object-fit: cover;
+      margin-bottom: 20px;
+      background: #fff;
+    }
+
+    .header h1 {
+      font-size: 2.5em;
+      margin-bottom: 10px;
+      font-weight: 700;
+    }
+
+    .header p {
+      font-size: 1.2em;
+      opacity: 0.95;
+    }
+
+    .content {
+      padding: 40px;
+    }
+
+    .section {
+      margin-bottom: 40px;
+    }
+
+    .section h2 {
+      color: #667eea;
+      margin-bottom: 20px;
+      font-size: 1.5em;
+      border-bottom: 3px solid #667eea;
+      display: inline-block;
+      padding-bottom: 5px;
+    }
+
+    .social-links {
+      display: flex;
+      gap: 15px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .social-links a {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 25px;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      text-decoration: none;
+      border-radius: 25px;
+      transition: transform 0.3s, box-shadow 0.3s;
+      font-weight: 500;
+    }
+
+    .social-links a:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 20px rgba(102, 126, 234, 0.4);
+    }
+
+    .skills {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .skill-tag {
+      padding: 8px 20px;
+      background: #f0f0f0;
+      border-radius: 20px;
+      font-size: 0.9em;
+      color: #555;
+      transition: all 0.3s;
+    }
+
+    .skill-tag:hover {
+      background: #667eea;
+      color: white;
+      transform: translateY(-2px);
+    }
+
+    .contact-info {
+      text-align: center;
+      color: #666;
+    }
+
+    .contact-info p {
+      margin: 10px 0;
+    }
+
+    .footer {
+      text-align: center;
+      padding: 30px;
+      background: #f8f9fa;
+      color: #666;
+      font-size: 0.9em;
+    }
+
+    @media (max-width: 600px) {
+      .header h1 {
+        font-size: 2em;
+      }
+
+      .content {
+        padding: 30px 20px;
+      }
+
+      .social-links a {
+        padding: 10px 20px;
+        font-size: 0.9em;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- 头部区域 -->
+    <div class="header">
+      <!-- 请替换为您的头像链接 -->
+      <img src="https://via.placeholder.com/150" alt="头像" class="avatar" />
+      <h1>您的姓名</h1>
+      <p>职业 / 身份简介</p>
+    </div>
+
+    <!-- 主要内容 -->
+    <div class="content">
+      <!-- 关于我 -->
+      <div class="section">
+        <h2><i class="fas fa-user"></i> 关于我</h2>
+        <p>
+          您好！我是一名热爱技术的开发者，专注于 Web 开发和用户体验设计。
+          喜欢探索新技术，乐于分享知识。欢迎与我交流！
+        </p>
+      </div>
+
+      <!-- 技能 -->
+      <div class="section">
+        <h2><i class="fas fa-code"></i> 技能</h2>
+        <div class="skills">
+          <span class="skill-tag">HTML/CSS</span>
+          <span class="skill-tag">JavaScript</span>
+          <span class="skill-tag">Python</span>
+          <span class="skill-tag">Git</span>
+          <span class="skill-tag">React</span>
+          <span class="skill-tag">Node.js</span>
+        </div>
+      </div>
+
+      <!-- 社交链接 -->
+      <div class="section">
+        <h2><i class="fas fa-share-alt"></i> 联系我</h2>
+        <div class="social-links">
+          <a href="https://github.com/你的用户名" target="_blank">
+            <i class="fab fa-github"></i> GitHub
+          </a>
+          <a href="mailto:your.email@example.com">
+            <i class="fas fa-envelope"></i> 邮箱
+          </a>
+          <a href="https://linkedin.com/in/你的用户名" target="_blank">
+            <i class="fab fa-linkedin"></i> LinkedIn
+          </a>
+          <a href="https://twitter.com/你的用户名" target="_blank">
+            <i class="fab fa-twitter"></i> Twitter
+          </a>
+        </div>
+      </div>
+
+      <!-- 联系方式 -->
+      <div class="section">
+        <h2><i class="fas fa-map-marker-alt"></i> 其他信息</h2>
+        <div class="contact-info">
+          <p><i class="fas fa-map-marker-alt"></i> 所在城市，国家</p>
+          <p><i class="fas fa-briefcase"></i> 目前职位 / 可工作状态</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 页脚 -->
+    <div class="footer">
+      <p>© 2024 您的姓名。All rights reserved.</p>
+      <p>Powered by GitHub Pages</p>
+    </div>
+  </div>
+</body>
+</html>
